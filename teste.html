@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yunk Vino Store - Roupas</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      background: #0B0C10;
+      overflow-x: hidden;
+      color: #C5C6C7;
+    }
+
+    /* Fundo animado com partículas */
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: #0B0C10;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: #45A29E;
+      opacity: 0.7;
+      animation: float 10s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0.7;
+      }
+      50% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(-10vh) translateX(50px);
+        opacity: 0;
+      }
+    }
+
+    header {
+      background-color: #1F2833;
+      padding: 1rem 2rem;
+      text-align: center;
+      border-bottom: 2px solid #E94560;
+    }
+
+    header h1 {
+      color: #E94560;
+      font-size: 2.5rem;
+      letter-spacing: 3px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: #1F2833;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 0 10px #45A29E;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px #E94560;
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .product-card h2 {
+      color: #E94560;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    .product-card p {
+      color: #C5C6C7;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      min-height: 40px;
+    }
+
+    .product-card .price {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #45A29E;
+      margin-bottom: 1rem;
+    }
+
+    .btn-buy {
+      background-color: #E94560;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      color: #C5C6C7;
+      font-weight: 700;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    .btn-buy:hover {
+      background-color: #C13B50;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1F2833;
+      color: #C5C6C7;
+      margin-top: 3rem;
+      border-top: 2px solid #E94560;
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="background"></div>
+
+  <header>
+    <h1>Yunk Vino Store</h1>
+  </header>
+
+  <main>
+    <section class="products">
+      <article class="product-card">
+        <img src="https://i.imgur.com/3ZQ3ZQZ.jpg" alt="Camiseta Yunk Vino" />
+        <h2>Camiseta Midnight</h2>
+        <p>Camiseta preta com estampa temática do álbum Midnight Calls.</p>
+        <div class="price">R$ 79,90</div>
+        <button class="btn-buy">Comprar</button>
+      </article>
+
+      <article class="product-card">
+        <img src="https://i.imgur.com/7Q9Q9Q9.jpg" alt="Moletom Yunk Vino" />
+        <h2>Moletom Vino</h2>
+        <p>Moletom confortável com logo do Yunk Vino em azul claro.</p>
+        <div class="price">R$ 149,90</div>
+        <button class="btn-buy">Comprar</button>
+      </article>
+
+      <article class="product-card">
+        <img src="https://i.imgur.com/1X1X1X1.jpg" alt="Boné Midnight" />
+        <h2>Boné Midnight</h2>
+        <p>Boné preto com detalhes em vermelho suave.</p>
+        <div class="price">R$ 59,90</div>
+        <button class="btn-buy">Comprar</button>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2024 Yunk Vino Store - Todos os direitos reservados
+  </footer>
+
+  <script>
+    // Criar partículas para o fundo animado
+    const background = document.getElementById('background');
+    const numParticles = 30;
+
+    for(let i = 0; i < numParticles; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      const size = Math.random() * 10 + 5; // 5 a 15 px
+      particle.style.width = size + 'px';
+      particle.style.height = size + 'px';
+      particle.style.left = Math.random() * 100 + 'vw';
+      particle.style.animationDuration = (5 + Math.random() * 10) + 's';
+      particle.style.animationDelay = (Math.random() * 10) + 's';
+      background.appendChild(particle);
+    }
+  </script>
+</body>
+</html>
