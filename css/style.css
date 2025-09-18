@@ -65,7 +65,7 @@ hr{
 }
 nav {
     background-color: rgb(80, 78, 78);
-    height: 2rem;
+    height: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,10 +88,10 @@ nav ul li {
     border-radius: 10px;
 }
 nav ul li:hover{
-    transform: rotateY(15deg) translateZ(20px);
-    box-shadow: 0px 4px 10px grey;
+    transform: rotateY(5deg) translateZ(22px);
+    box-shadow: 0px 3px 8px grey;
     background-color: rgb(100, 100, 100);
-    z-index: 10;
+    z-index: 5;
 }
 a {
     text-decoration: none;
@@ -170,8 +170,8 @@ main h2{
 .imagem{
     background-color: #1e0720;
     border-radius: 20px;
-    padding: 0.8rem;
-    box-shadow: 5px 1px 10px #454964;
+    padding: 0.4rem;
+    box-shadow: 8px 1px 10px #454964;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
 }
@@ -186,7 +186,7 @@ main h2{
 .imagem img:hover{
     /* transform: scale(10); */
     /* transition: 0.3s; */
-     transform: translateY(-10px);
+     transform: translateY(-25px);
 }
 .imagem h2{
     color: #ababad;
@@ -211,7 +211,7 @@ main h2{
     padding: 0.9rem;
     color: #e0d4d4;
     font-weight: 800;
-    border-radius: 7px;
+    border-radius: 80px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 100%;
@@ -219,14 +219,14 @@ main h2{
 }
 .comprar:hover{
     background-color: #635b5b;
+    transform: translateY(-2px);
 }
 .conteudo{
-    border: 3px solid red;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 75%;
-    gap: 2.5rem;
+    width: 85%;
+    gap: 1.8rem;
     min-height: 450px;
 }
 .conteudo img{
@@ -242,7 +242,6 @@ main h2{
     
 }
 .formulario{
-    border: 3px solid red;
     display: flex;
     flex-direction: row;
     min-height: 480px;
@@ -257,7 +256,7 @@ main h2{
 }
 .botao{
     padding: 8px 15px;
-    background-color: rgb(90, 67, 219);
+    background-color: rgb(42, 11, 99);
     color: white;
     font-size: 1.2rem;
     border: none;
